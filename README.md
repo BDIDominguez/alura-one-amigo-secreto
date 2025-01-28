@@ -83,7 +83,7 @@ Simplemente abre el archivo `index.html` en tu navegador y disfruta.
 
 A continuación, una captura de cómo se ve el sistema:
 
-![Vista previa del juego Amigo Secreto](https://via.placeholder.com/800x400.png?text=Vista+previa+del+juego)
+![Vista previa del juego Amigo Secreto](https://bdidominguez.github.io/alura-one-amigo-secreto/)
 
 ---
 
