@@ -42,12 +42,13 @@ Amigo secreto para el curso de One y Alura
 
 ## 📂 Estructura del proyecto
 
-  ├── assets # Carpeta que contiene las Imagenes. 
-  ├── index.html # Página principal con la interfaz del juego. 
-  ├── styles.css # Estilos de la página para una mejor apariencia.
-  ├── script.js # Lógica del juego (agregar, eliminar, sortear, limpiar). 
-  └── README.md # Explicación del proyecto (este archivo).
-
+```plaintext
+.
+├── assets             # Carpeta que contiene las Imagenes. 
+├── index.html         # Página principal con la interfaz del juego.
+├── styles.css         # Estilos de la página para una mejor apariencia.
+├── script.js          # Lógica del juego (agregar, eliminar, sortear, limpiar).
+└── README.md          # Explicación del proyecto (este archivo).
 
 ---
 
