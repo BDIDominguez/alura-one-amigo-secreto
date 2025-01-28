@@ -42,6 +42,7 @@ Amigo secreto para el curso de One y Alura
 
 ## 📂 Estructura del proyecto
 
+```plaintext
 .
 ├── assets             # Carpeta que contiene las Imagenes. 
 ├── index.html         # Página principal con la interfaz del juego.
@@ -49,6 +50,7 @@ Amigo secreto para el curso de One y Alura
 ├── script.js          # Lógica del juego (agregar, eliminar, sortear, limpiar).
 └── README.md          # Explicación del proyecto (este archivo).
 
+ ```
 ---
 
 ## 🌟 Funcionalidad destacada: Botones interactivos
