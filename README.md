@@ -79,14 +79,6 @@ Simplemente abre el archivo `index.html` en tu navegador y disfruta.
 
 ---
 
-## 🖼️ Vista previa
-
-A continuación, una captura de cómo se ve el sistema:
-
-![Vista previa del juego Amigo Secreto](https://bdidominguez.github.io/alura-one-amigo-secreto/)
-
----
-
 ## 👩‍💻 Autor
 
 Creado por [BDIDominguez](https://github.com/BDIDominguez) como parte del programa educativo **Alura ONE**.
