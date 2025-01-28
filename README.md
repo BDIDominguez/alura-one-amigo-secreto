@@ -42,7 +42,6 @@ Amigo secreto para el curso de One y Alura
 
 ## 📂 Estructura del proyecto
 
-```plaintext
 .
 ├── assets             # Carpeta que contiene las Imagenes. 
 ├── index.html         # Página principal con la interfaz del juego.
