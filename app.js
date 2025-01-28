@@ -52,9 +52,19 @@ function mostrarLista(){
     listaAmigos.sort((a, b) => a.localeCompare(b));
     let ulAmigos = document.getElementById('listaAmigos');
     ulAmigos.innerHTML = '';
-    listaAmigos.forEach(amigo => {
+    listaAmigos.forEach((amigo, index) => {
+        // Creamos el LI con el nombre
         let liNuevo = document.createElement('li');
         liNuevo.textContent = amigo;
+        
+        // agregamos un boton para eliminar
+        let btEliminar = document.createElement('button');
+        btEliminar.textContent = " - ";
+        btEliminar.style.marginLeft = "15px";
+        btEliminar.onclick = () => eliminarAmigo(index);
+        // Agregamos el Boton al LI
+        liNuevo.appendChild(btEliminar);
+        // Agregamos el LI al UL
         ulAmigos.appendChild(liNuevo);
     });
 }
@@ -70,10 +80,52 @@ function formatearNombre(nombre){
     return nombre.charAt(0).toUpperCase()+nombre.slice(1).toLowerCase();
 }
 
+/**
+ * Funcion que sortea una persona al azar del listado de amigos cargados
+ * usa la funcion math.random para obtener un numero de indice.
+ * para evitar que se repita voy a eliminar de la lista al seleccionado.
+ * ademas de que se limpia la lista de sorteados ya que el que tiene el nombre es solo suyo (mantener secretismo)
+ * 
+ * @returns  
+ */
 function sortearAmigo(){
     const ulResultados = document.getElementById('resultado');
     if (listaAmigos.length === 0){
         alert("No hay amigos para sortear")
         return;
     }
+    const numeroSorteado = Math.floor(Math.random()*listaAmigos.length);
+    const nombreSorteado = listaAmigos[numeroSorteado];
+    const ulSorteados = document.getElementById('resultado');
+    ulSorteados.innerHTML = '';
+    let liNuevo = document.createElement('li');
+    liNuevo.textContent = nombreSorteado;
+    let btEliminar = document.createElement('button');
+    btEliminar.textContent = " - ";
+    btEliminar.style.marginLeft = "15px";
+    btEliminar.onclick = () => limpiarSorteados();
+    liNuevo.appendChild(btEliminar);
+    ulSorteados.appendChild(liNuevo);
+    listaAmigos.splice(numeroSorteado,1);
+    mostrarLista()
+    console.log("lista final  ", listaAmigos)
+}
+
+/**
+ * Elimina de la lista de Amigos el nombre que fue cargado en la pagina
+ */
+function eliminarAmigo(index){
+    listaAmigos.splice(index,1);
+    mostrarLista();
+}
+
+/**
+ * Limpia el contenedor de amigo sorteado
+ * entrega el foco al boton de sorteo
+ */
+
+function limpiarSorteados(){
+    const ulSorteados = document.getElementById('resultado');
+    ulSorteados.innerHTML = '';
+    const btSorteo = document.getElementById
 }
