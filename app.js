@@ -97,7 +97,7 @@ function sortearAmigo(){
     const numeroSorteado = Math.floor(Math.random()*listaAmigos.length);
     const nombreSorteado = listaAmigos[numeroSorteado];
     const ulSorteados = document.getElementById('resultado');
-    ulSorteados.innerHTML = '';
+    //ulSorteados.innerHTML = '';
     let liNuevo = document.createElement('li');
     liNuevo.textContent = nombreSorteado;
     let btEliminar = document.createElement('button');
@@ -108,7 +108,7 @@ function sortearAmigo(){
     ulSorteados.appendChild(liNuevo);
     listaAmigos.splice(numeroSorteado,1);
     mostrarLista()
-    console.log("lista final  ", listaAmigos)
+    //console.log("lista final  ", listaAmigos)
 }
 
 /**
