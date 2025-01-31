@@ -53,19 +53,7 @@ function mostrarLista(){
     let ulAmigos = document.getElementById('listaAmigos');
     ulAmigos.innerHTML = '';
     listaAmigos.forEach((amigo, index) => {
-        // Creamos el LI con el nombre
-        let liNuevo = document.createElement('li');
-        liNuevo.textContent = amigo;
-        
-        // agregamos un boton para eliminar
-        let btEliminar = document.createElement('button');
-        btEliminar.textContent = " - ";
-        btEliminar.style.marginLeft = "15px";
-        btEliminar.onclick = () => eliminarAmigo(index);
-        // Agregamos el Boton al LI
-        liNuevo.appendChild(btEliminar);
-        // Agregamos el LI al UL
-        ulAmigos.appendChild(liNuevo);
+        ulAmigos.appendChild(crearElementoLista(amigo,() => eliminarAmigo(index)));
     });
 }
 
@@ -89,7 +77,6 @@ function formatearNombre(nombre){
  * @returns  
  */
 function sortearAmigo(){
-    const ulResultados = document.getElementById('resultado');
     if (listaAmigos.length === 0){
         alert("No hay amigos para sortear")
         return;
@@ -97,18 +84,11 @@ function sortearAmigo(){
     const numeroSorteado = Math.floor(Math.random()*listaAmigos.length);
     const nombreSorteado = listaAmigos[numeroSorteado];
     const ulSorteados = document.getElementById('resultado');
-    //ulSorteados.innerHTML = '';
-    let liNuevo = document.createElement('li');
-    liNuevo.textContent = nombreSorteado;
-    let btEliminar = document.createElement('button');
-    btEliminar.textContent = " - ";
-    btEliminar.style.marginLeft = "15px";
-    btEliminar.onclick = () => limpiarSorteados();
-    liNuevo.appendChild(btEliminar);
-    ulSorteados.appendChild(liNuevo);
+    ulSorteados.innerHTML = "";
+    ulSorteados.appendChild(crearElementoLista(nombreSorteado,limpiarSorteados));
     listaAmigos.splice(numeroSorteado,1);
     mostrarLista()
-    //console.log("lista final  ", listaAmigos)
+    
 }
 
 /**
@@ -125,7 +105,29 @@ function eliminarAmigo(index){
  */
 
 function limpiarSorteados(){
-    const ulSorteados = document.getElementById('resultado');
-    ulSorteados.innerHTML = '';
-    const btSorteo = document.getElementById
+    document.getElementById('resultado').innerHTML = "";
+
+}
+
+/**
+ * Muestra el Mensaje en la Pagina para evitar el usar los ALERT()
+ */
+
+function mostrarMensaje(mensaje, tipo){
+    const resultado = document.getElementById()
+
+}
+
+/**
+ * Crea un elemento de lista con un boton de eliminar y su respectiva llamada a funciones
+ */
+function crearElementoLista(texto, onClick){
+    const li = document.createElement('li');
+    li.textContent = texto;
+    const btEliminar = document.createElement('button');
+    btEliminar.textContent = " - ";
+    btEliminar.style.marginLeft = "15px";
+    btEliminar.onclick = onClick;
+    li.appendChild(btEliminar);
+    return li;
 }
